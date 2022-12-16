@@ -1,27 +1,13 @@
-<?php
-
-/** @var yii\web\View $this */
-/** @var string $name */
-/** @var string $message */
-/** @var Exception$exception */
-
-use yii\helpers\Html;
-
-$this->title = $name;
-?>
-<div class="site-error">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
-    </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
-</div>
+<main class="main-content">
+    <!--== Start Faq Area Wrapper ==-->
+    <section class="page-not-found-area">
+        <div class="container">
+            <div class="page-not-found">
+                <img src="/web/images/photos/page-not-found.webp" width="975" height="538" alt="Image">
+                <h3 class="title">Opps! You Lost</h3>
+                <h5 class="back-btn">Go to <a href="/">Home</a> Page</h5>
+            </div>
+        </div>
+    </section>
+    <!--== End Faq Area Wrapper ==-->
+</main>

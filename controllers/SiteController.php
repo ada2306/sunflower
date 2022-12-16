@@ -2,6 +2,12 @@
 
 namespace app\controllers;
 
+use app\models\Basket;
+use app\models\Category;
+use app\models\Orders;
+use app\models\Products;
+use app\models\RegForm;
+use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -61,7 +67,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $products = Products::find()->all();
+        $products_akc = Products::find()->orderBy(['price'=> SORT_DESC])->all();
+        return $this->render('index',['products'=>$products,'products_akc'=>$products_akc]);
     }
 
     /**
@@ -71,7 +79,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
+        /*if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
@@ -83,6 +91,32 @@ class SiteController extends Controller
         $model->password = '';
         return $this->render('login', [
             'model' => $model,
+        ]);*/
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $modelLogin = new LoginForm();
+        if ($modelLogin->load(Yii::$app->request->post()) && $modelLogin->login()) {
+            return $this->goBack();
+        }
+        $modelLogin->password = '';
+
+
+        $modelReg = new RegForm();
+
+        if ($this->request->isPost) {
+            if ($modelReg->load($this->request->post()) && $modelReg->save()) {
+                Yii::$app->user->login($modelReg);
+                return $this->redirect(['/site']);
+            }
+        } else {
+            $modelReg->loadDefaultValues();
+        }
+
+        return $this->render('login', [
+            'modelReg' => $modelReg,
+            'modelLogin' => $modelLogin,
         ]);
     }
 
@@ -127,10 +161,88 @@ class SiteController extends Controller
     }
     public function actionProduct()
     {
-        return $this->render('product');
+
+        $category = Category::find()->all();
+        $products = Products::find()->all();
+        return $this->render('product',['products'=>$products,
+            'category'=>$category]);
     }
     public function actionProduct_details()
     {
-        return $this->render('product_details');
+        $id = Yii::$app->request->getQueryParam('id');
+        $product = Products::findOne($id);
+
+        return $this->render('product_details', ['product'=>$product]);
+    }
+    public function actionProduct_checkout()
+    {
+
+        //$products = Yii::$app->session['basket']['products'];
+        /*if (Yii::$app->user->isGuest){
+            return $this->redirect('/site/login');
+        }
+        else{
+            $basket = (new Basket())->getBasket();
+            $model = new Orders();
+            if ($this->request->isPost && $model->load($this->request->post())) {
+                $model->date = Yii::$app->formatter->asDatetime('2019-09-24 22:12:42', 'medium');
+                $model->name = Yii::$app->user->identity->fio;
+                $model->over_price = Yii::$app->session['basket']['amount'];
+                $count = 0;
+                foreach ($basket['products'] as $item) {
+                    $count = $count + $item['count'];
+                }
+                $model->count = $count;
+                $model->id_user = Yii::$app->user->identity->id;
+                $model->save();
+                return $this->redirect(['/site/my_account']);
+            }
+
+
+
+            return $this->render('product_checkout', ['basket'=>$basket, 'model'=>$model]);*/
+
+
+        if (Yii::$app->user->isGuest){
+            return $this->redirect('/site/login');
+        }
+        else{
+            $basket = (new Basket())->getBasket();
+            $model = new Orders();
+           // $model->date = Yii::$app->formatter->asTimestamp(date('Y-d-m h:i:s'));
+            $model->date = date("Y.m.d");
+            $model->name = Yii::$app->user->identity->fio;
+            $model->over_price = Yii::$app->session['basket']['amount'];
+            $count = 0;
+            foreach ($basket['products'] as $item) {
+                $count = $count + $item['count'];
+            }
+            $model->count = $count;
+            $model->id_user = Yii::$app->user->identity->id;
+            $model->description = 'sdasd';
+
+
+            if ($this->request->isPost) {
+                if ($model->load($this->request->post()) && $model->save()) {
+                    return $this->redirect(['/site/my_account']);
+                }
+            } else {
+                $model->loadDefaultValues();
+            }
+
+            return $this->render('product_checkout', [
+                'model' => $model,
+                'basket'=>$basket,
+            ]);
+        }
+
+    }
+    public function actionProduct_cart()
+    {
+        return $this->render('product_cart');
+    }
+    public function actionMy_account(){
+        $orders = Orders::find()->where(['id_user'=>Yii::$app->user->identity->id])->all();
+        return $this->render('my_account',['orders'=>$orders]);
     }
 }

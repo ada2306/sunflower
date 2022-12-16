@@ -1,4 +1,15 @@
+<?php
 
+/** @var yii\web\View $this */
+
+/** @var app\controllers\SiteController $product */
+
+
+use yii\helpers\Html;
+use yii\helpers\Url;
+
+$this->title = 'Магазин';
+?>
 
 
 <main class="main-content">
@@ -37,15 +48,8 @@
                 <div class="col-lg-6">
                     <div class="product-details-content">
                         <h5 class="product-details-collection">Premioum collection</h5>
-                        <h3 class="product-details-title">Offbline Instant Age Rewind Eraser.</h3>
+                        <h3 class="product-details-title"><?= $product->name ?></h3>
                         <div class="product-details-review mb-7">
-                            <div class="product-review-icon">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-half-o"></i>
-                            </div>
                             <button type="button" class="product-review-show">150 reviews</button>
                         </div>
                         <p class="mb-7">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, repellendus. Nam voluptate illo ut quia non sapiente provident alias quos laborum incidunt, earum accusamus, natus. Vero pariatur ut veniam sequi amet consectetur.</p>
@@ -56,10 +60,10 @@
                         </div>
                         <div class="product-details-shipping-cost">
                             <input class="form-check-input" type="checkbox" value="" id="ShippingCost" checked>
-                            <label class="form-check-label" for="ShippingCost">Shipping from USA, Shipping Fees $4.22</label>
+                            <label class="form-check-label" for="ShippingCost"><?= $product->name ?></label>
                         </div>
                         <div class="product-details-action">
-                            <h4 class="price">$254.22</h4>
+                            <h4 class="price"><?= $product->price ?></h4>
                             <div class="product-details-cart-wishlist">
                                 <button type="button" class="btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal"><i class="fa fa-heart-o"></i></button>
                                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>

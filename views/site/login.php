@@ -1,49 +1,102 @@
 <?php
 
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
 /** @var yii\web\View $this */
-/** @var yii\bootstrap5\ActiveForm $form */
-/** @var app\models\LoginForm $model */
-
-use yii\bootstrap5\ActiveForm;
-use yii\bootstrap5\Html;
-
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+/** @var app\controllers\SiteController $modelReg */
+/** @var app\controllers\SiteController $modelLogin */
+/** @var yii\widgets\ActiveForm $form */
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
 
-    <?php $form = ActiveForm::begin([
-        'id' => 'login-form',
-        'layout' => 'horizontal',
-        'fieldConfig' => [
-            'template' => "{label}\n{input}\n{error}",
-            'labelOptions' => ['class' => 'col-lg-1 col-form-label mr-lg-3'],
-            'inputOptions' => ['class' => 'col-lg-3 form-control'],
-            'errorOptions' => ['class' => 'col-lg-7 invalid-feedback'],
-        ],
-    ]); ?>
+<main class="main-content">
 
-        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-        <?= $form->field($model, 'password')->passwordInput() ?>
-
-        <?= $form->field($model, 'rememberMe')->checkbox([
-            'template' => "<div class=\"offset-lg-1 col-lg-3 custom-control custom-checkbox\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-        ]) ?>
-
-        <div class="form-group">
-            <div class="offset-lg-1 col-lg-11">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+    <!--== Start Page Header Area Wrapper ==-->
+    <section class="page-header-area pt-10 pb-9" data-bg-color="#FFF3DA">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="page-header-st3-content text-center text-md-start">
+                        <ol class="breadcrumb justify-content-center justify-content-md-start">
+                            <li class="breadcrumb-item"><a class="text-dark" href="index.html">Главная</a></li>
+                            <li class="breadcrumb-item active text-dark" aria-current="page">Аккаунт</li>
+                        </ol>
+                        <h2 class="page-header-title">Аккаунт</h2>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+    <!--== End Page Header Area Wrapper ==-->
 
-    <?php ActiveForm::end(); ?>
+    <!--== Start Account Area Wrapper ==-->
+    <section class="section-space">
+        <div class="container">
+            <div class="row mb-n8">
+                <div class="col-lg-6 mb-8">
+                    <!--== Start Login Area Wrapper ==-->
+                    <div class="my-account-item-wrap">
+                        <h3 class="title">Вход</h3>
+                        <div class="my-account-form">
+                            <?php $form = ActiveForm::begin(); ?>
 
-    <div class="offset-lg-1" style="color:#999;">
-        You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-        To modify the username/password, please check out the code <code>app\models\User::$users</code>.
-    </div>
-</div>
+                                <div class="form-group mb-6">
+                                    <?= $form->field($modelLogin, 'email')->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class="form-group mb-6">
+                                    <?= $form->field($modelLogin, 'password')->textInput(['maxlength' => true]) ?>
+                                </div>
+
+                                <div class="form-group d-flex align-items-center mb-14">
+                                    <?= Html::submitButton('Войти', ['class' => 'btn btn-success']) ?>
+
+
+                                    <div class="form-check ms-3">
+                                        <input type="checkbox" class="form-check-input" id="remember_pwsd">
+                                        <label class="form-check-label" for="remember_pwsd">Запомнить меня</label>
+                                    </div>
+                                </div>
+                                <a class="lost-password" href="#">Забыли пароль?</a>
+                            <?php ActiveForm::end(); ?>
+                        </div>
+                    </div>
+                    <!--== End Login Area Wrapper ==-->
+                </div>
+                <div class="col-lg-6 mb-8">
+                    <!--== Start Register Area Wrapper ==-->
+                    <div class="my-account-item-wrap">
+                        <h3 class="title">Регистрация</h3>
+                        <div class="my-account-form">
+                            <?php $form = ActiveForm::begin(); ?>
+
+                            <?= $form->field($modelReg, 'fio')->textInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($modelReg, 'phone')->textInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($modelReg, 'email')->textInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($modelReg, 'password')->passwordInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($modelReg, 'passwordConfirm')->passwordInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($modelReg, 'address')->textInput(['maxlength' => true]) ?>
+
+                            <?= $form->field($modelReg, 'agree')->checkbox() ?>
+
+                            <div class="form-group">
+                                <?= Html::submitButton('Зарегистрироваться', ['class' => 'btn btn-success']) ?>
+                            </div>
+
+                            <?php ActiveForm::end(); ?>
+                        </div>
+
+                    </div>
+                    <!--== End Register Area Wrapper ==-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--== End Account Area Wrapper ==-->
+
+</main>

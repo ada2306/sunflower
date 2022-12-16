@@ -1,7 +1,14 @@
 <?php
 /* @var $this yii\web\View */
 
+use yii\helpers\Html;
+use yii\helpers\Url;
+
 $this->title = Yii::$app->name;
+
+/** @var app\controllers\SiteController $products */
+/** @var app\controllers\SiteController $products_akc */
+
 
 ?>
 
@@ -16,21 +23,21 @@ $this->title = Yii::$app->name;
                         <div class="row align-items-center position-relative">
                             <div class="col-12 col-md-6">
                                 <div class="hero-two-slide-content">
-                                    <div class="hero-two-slide-text-img"><img src="/web/images/slider/text-light.webp" width="427" height="232" alt="Image"></div>
-                                    <h2 class="hero-two-slide-title">ANTI AGEING</h2>
-                                    <p class="hero-two-slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</p>
+                                    <div class="hero-two-slide-text-img"><img src="/web/images/slider/text-light.webp"
+                                                                              width="427" height="232" alt="Image">
+                                    </div>
+                                    <h2 class="hero-two-slide-title">Свежие цветы</h2>
+                                    <p class="hero-two-slide-desc">Свежие и красивые букеты на заказ на любые
+                                        праздники.</p>
                                     <div class="hero-two-slide-meta">
-                                        <a class="btn btn-border-primary" href="product.html">BUY NOW</a>
-                                        <a class="ht-popup-video" data-fancybox data-type="iframe" href="https://player.vimeo.com/video/172601404?autoplay=1">
-                                            <i class="fa fa-play icon"></i>
-                                            <span>Play Now</span>
+                                        <a class="btn btn-border-primary" href="/web/site/product">Посмотреть</a>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="hero-two-slide-thumb">
-                                    <img src="/web/images/slider/slider3.webp" width="690" height="690" alt="Image">
+                                    <img src="/web/images/slider/slider.png" width="690" height="690" alt="Image">
                                 </div>
                             </div>
                         </div>
@@ -41,21 +48,21 @@ $this->title = Yii::$app->name;
                         <div class="row align-items-center position-relative">
                             <div class="col-12 col-md-6">
                                 <div class="hero-two-slide-content">
-                                    <div class="hero-two-slide-text-img"><img src="/web/images/slider/text-light.webp" width="427" height="232" alt="Image"></div>
-                                    <h2 class="hero-two-slide-title">CLEAN FRESH</h2>
-                                    <p class="hero-two-slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis.</p>
+                                    <div class="hero-two-slide-text-img"><img src="/web/images/slider/text-light.webp"
+                                                                              width="427" height="232" alt="Image">
+                                    </div>
+                                    <h2 class="hero-two-slide-title">Быстрая доставка</h2>
+                                    <p class="hero-two-slide-desc">Быстрая доставка в любую точку города. Фотоотчёт
+                                        перед отправкой, а также экспресс-доставка при срочности.</p>
                                     <div class="hero-two-slide-meta">
-                                        <a class="btn btn-border-primary" href="product.html">BUY NOW</a>
-                                        <a class="ht-popup-video" data-fancybox data-type="iframe" href="https://player.vimeo.com/video/172601404?autoplay=1">
-                                            <i class="fa fa-play icon"></i>
-                                            <span>Play Now</span>
+                                        <a class="btn btn-border-primary" href="/web/site/product">Посмотреть</a>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="hero-two-slide-thumb">
-                                    <img src="/web/images/slider/slider4.webp" width="690" height="690" alt="Image">
+                                    <img src="/web/images/slider/slider2.png" width="690" height="690" alt="Image">
                                 </div>
                             </div>
                         </div>
@@ -74,22 +81,22 @@ $this->title = Yii::$app->name;
             <div class="row">
                 <div class="col-sm-6 col-lg-4">
                     <!--== Start Product Category Item ==-->
-                    <a href="product.html" class="product-banner-item">
-                        <img src="/web/images/shop/banner/4.webp" width="370" height="370" alt="Image-HasTech">
+                    <a href="/web/site/product" class="product-banner-item">
+                        <img src="/web/images/shop/banner/1.png" width="370" height="370" alt="Image-HasTech">
                     </a>
                     <!--== End Product Category Item ==-->
                 </div>
                 <div class="col-sm-6 col-lg-4 mt-sm-0 mt-6">
                     <!--== Start Product Category Item ==-->
-                    <a href="product.html" class="product-banner-item">
-                        <img src="/web/images/shop/banner/5.webp" width="370" height="370" alt="Image-HasTech">
+                    <a href="/web/site/product" class="product-banner-item">
+                        <img src="/web/images/shop/banner/2.png" width="370" height="370" alt="Image-HasTech">
                     </a>
                     <!--== End Product Category Item ==-->
                 </div>
                 <div class="col-sm-6 col-lg-4 mt-lg-0 mt-6">
                     <!--== Start Product Category Item ==-->
-                    <a href="product.html" class="product-banner-item">
-                        <img src="/web/images/shop/banner/6.webp" width="370" height="370" alt="Image-HasTech">
+                    <a href="/web/site/product" class="product-banner-item">
+                        <img src="/web/images/shop/banner/3.png" width="370" height="370" alt="Image-HasTech">
                     </a>
                     <!--== End Product Category Item ==-->
                 </div>
@@ -104,41 +111,49 @@ $this->title = Yii::$app->name;
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="title">Best Product</h2>
-                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</p>
+                        <h2 class="title">Новинки</h2>
+                        <p class="m-0">Новинки нового сезона.</p>
                     </div>
                 </div>
             </div>
+
             <div class="row mb-n4 mb-sm-n10 g-3 g-sm-6">
+
+                <?php
+                foreach ($products as $product) {
+                    echo '
                 <div class="col-6 col-lg-4 mb-4 mb-sm-9">
+            
                     <!--== Start Product Item ==-->
                     <div class="product-item product-st2-item">
                         <div class="product-thumb">
-                            <a class="d-block" href="product-details.html">
-                                <img src="/web/images/shop/1.webp" width="370" height="450" alt="Image-HasTech">
+                            <a class="d-block" href="/web/site/product_details">
+                                <img src="' . $product->image . '" width="370" height="450" alt="Image-HasTech">
                             </a>
-                            <span class="flag-new">new</span>
+                            <span class="flag-new">Новинка</span>
                         </div>
                         <div class="product-info">
-                            <div class="product-rating">
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="reviews">150 reviews</div>
-                            </div>
-                            <h4 class="title"><a href="product-details.html">Readable content DX22</a></h4>
+                            
+                            <h4 class="title"><a href="/web/site/product_details">' . $product->name . '</a></h4>
                             <div class="prices">
-                                <span class="price">$210.00</span>
-                                <span class="price-old">300.00</span>
+                                <span class="price">' . $product->price . ' ₽</span>
                             </div>
                             <div class="product-action">
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
+                                <form method="post"
+                                          action="' . Url::to(['basket/add']) . '">
+                                        <input type="hidden" name="id"
+                                               value="' . $product['id'] . '">
+                                                                    ' .
+                        Html::hiddenInput(
+                            Yii::$app->request->csrfParam,
+                            Yii::$app->request->csrfToken
+                        )
+                        . '
+                                        <button type="submit" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            В корзину
+                                        </button>
+                                    </form>
                                 <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
                                     <i class="fa fa-expand"></i>
                                 </button>
@@ -153,270 +168,35 @@ $this->title = Yii::$app->name;
                                 <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                                     <i class="fa fa-heart-o"></i>
                                 </button>
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
+                                <form method="post"
+                                          action="' . Url::to(['basket/add']) . '">
+                                        <input type="hidden" name="id"
+                                               value="' . $product['id'] . '">
+                                                                    ' .
+                        Html::hiddenInput(
+                            Yii::$app->request->csrfParam,
+                            Yii::$app->request->csrfToken
+                        )
+                        . '
+                                        <button type="submit" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            В корзину
+                                        </button>
+                                    </form>
                             </div>
                         </div>
                     </div>
-                    <!--== End prPduct Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 mb-4 mb-sm-9">
-                    <!--== Start Product Item ==-->
-                    <div class="product-item product-st2-item">
-                        <div class="product-thumb">
-                            <a class="d-block" href="product-details.html">
-                                <img src="/web/images/shop/2.webp" width="370" height="450" alt="Image-HasTech">
-                            </a>
-                            <span class="flag-new">new</span>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-rating">
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="reviews">150 reviews</div>
-                            </div>
-                            <h4 class="title"><a href="product-details.html">Modern Eye Brush</a></h4>
-                            <div class="prices">
-                                <span class="price">$210.00</span>
-                                <span class="price-old">300.00</span>
-                            </div>
-                            <div class="product-action">
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                            </div>
-                            <div class="product-action-bottom">
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--== End prPduct Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 mb-4 mb-sm-9">
-                    <!--== Start Product Item ==-->
-                    <div class="product-item product-st2-item">
-                        <div class="product-thumb">
-                            <a class="d-block" href="product-details.html">
-                                <img src="/web/images/shop/4.webp" width="370" height="450" alt="Image-HasTech">
-                            </a>
-                            <span class="flag-new">new</span>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-rating">
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="reviews">150 reviews</div>
-                            </div>
-                            <h4 class="title"><a href="product-details.html">Voyage face cleaner</a></h4>
-                            <div class="prices">
-                                <span class="price">$210.00</span>
-                                <span class="price-old">300.00</span>
-                            </div>
-                            <div class="product-action">
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                            </div>
-                            <div class="product-action-bottom">
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--== End prPduct Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 mb-4 mb-sm-9">
-                    <!--== Start Product Item ==-->
-                    <div class="product-item product-st2-item">
-                        <div class="product-thumb">
-                            <a class="d-block" href="product-details.html">
-                                <img src="/web/images/shop/3.webp" width="370" height="450" alt="Image-HasTech">
-                            </a>
-                            <span class="flag-new">new</span>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-rating">
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="reviews">150 reviews</div>
-                            </div>
-                            <h4 class="title"><a href="product-details.html">Impulse Duffle</a></h4>
-                            <div class="prices">
-                                <span class="price">$210.00</span>
-                                <span class="price-old">300.00</span>
-                            </div>
-                            <div class="product-action">
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                            </div>
-                            <div class="product-action-bottom">
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--== End prPduct Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 mb-4 mb-sm-9">
-                    <!--== Start Product Item ==-->
-                    <div class="product-item product-st2-item">
-                        <div class="product-thumb">
-                            <a class="d-block" href="product-details.html">
-                                <img src="/web/images/shop/7.webp" width="370" height="450" alt="Image-HasTech">
-                            </a>
-                            <span class="flag-new">new</span>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-rating">
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="reviews">150 reviews</div>
-                            </div>
-                            <h4 class="title"><a href="product-details.html">Sprite Yoga Straps1</a></h4>
-                            <div class="prices">
-                                <span class="price">$210.00</span>
-                                <span class="price-old">300.00</span>
-                            </div>
-                            <div class="product-action">
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                            </div>
-                            <div class="product-action-bottom">
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--== End prPduct Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 mb-4 mb-sm-9">
-                    <!--== Start Product Item ==-->
-                    <div class="product-item product-st2-item">
-                        <div class="product-thumb">
-                            <a class="d-block" href="product-details.html">
-                                <img src="/web/images/shop/6.webp" width="370" height="450" alt="Image-HasTech">
-                            </a>
-                            <span class="flag-new">new</span>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-rating">
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="reviews">150 reviews</div>
-                            </div>
-                            <h4 class="title"><a href="product-details.html">Fusion facial cream</a></h4>
-                            <div class="prices">
-                                <span class="price">$210.00</span>
-                                <span class="price-old">300.00</span>
-                            </div>
-                            <div class="product-action">
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                            </div>
-                            <div class="product-action-bottom">
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--== End prPduct Item ==-->
-                </div>
+                    <!--== End product Item ==-->
+                    
+                    
+
             </div>
+                ';
+                }
+                ?>
+            </div>
+
+
         </div>
     </section>
     <!--== End Product Area Wrapper ==-->
@@ -425,7 +205,7 @@ $this->title = Yii::$app->name;
     <section class="section-space pt-0">
         <div class="container">
             <!--== Start Product Category Item ==-->
-            <a href="product.html" class="product-banner-item">
+            <a href="/web/site/product" class="product-banner-item">
                 <img src="/web/images/shop/banner/7.webp" width="1170" height="240" alt="Image-HasTech">
             </a>
             <!--== End Product Category Item ==-->
@@ -439,166 +219,88 @@ $this->title = Yii::$app->name;
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="title">Top Sale Products</h2>
-                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</p>
+                        <h2 class="title">Акция</h2>
+                        <p class="m-0">Скидки 15% на новую коллекцию</p>
                     </div>
                 </div>
             </div>
+
+
+
             <div class="row mb-n4 mb-sm-n10 g-3 g-sm-6">
-                <div class="col-6 col-lg-4 mb-4 mb-sm-10">
-                    <!--== Start Product Item ==-->
+
+                <!--== Start Product Item ==-->
+
+                <?php
+                foreach ($products_akc as $product) {
+                    echo '
+
+                     <div class="col-6 col-lg-4 mb-4 mb-sm-10">
+                    
                     <div class="product-item product-st2-item">
                         <div class="product-thumb">
-                            <a class="d-block" href="product-details.html">
-                                <img src="/web/images/shop/8.webp" width="370" height="450" alt="Image-HasTech">
+                            <a class="d-block" href="/web/site/product_details">
+                                <img src="' . $product->image . '" width="370" height="450" alt="Image-HasTech">
                             </a>
-                            <span class="flag-new">new</span>
+                            <span class="flag-new">SALE</span>
                         </div>
                         <div class="product-info">
-                            <div class="product-rating">
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="reviews">150 reviews</div>
-                            </div>
-                            <h4 class="title"><a href="product-details.html">Readable content DX22</a></h4>
+                           
+                            <h4 class="title"><a href="/web/site/product_details">' . $product->name . '</a></h4>
                             <div class="prices">
-                                <span class="price">$210.00</span>
-                                <span class="price-old">300.00</span>
+                                <span class="price">' . $product->price . ' ₽</span>
                             </div>
                             <div class="product-action">
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
+                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal"
+                                        data-bs-target="#action-CartAddModal">
+                                    <span>В корзину</span>
                                 </button>
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
+                                <button type="button" class="product-action-btn action-btn-quick-view"
+                                        data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
                                     <i class="fa fa-expand"></i>
                                 </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
+                                <button type="button" class="product-action-btn action-btn-wishlist"
+                                        data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                                     <i class="fa fa-heart-o"></i>
                                 </button>
                             </div>
                             <div class="product-action-bottom">
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
+                                <button type="button" class="product-action-btn action-btn-quick-view"
+                                        data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
                                     <i class="fa fa-expand"></i>
                                 </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
+                                <button type="button" class="product-action-btn action-btn-wishlist"
+                                        data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                                     <i class="fa fa-heart-o"></i>
                                 </button>
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
+                                <form method="post"
+                                          action="' . Url::to(['basket/add']) . '">
+                                        <input type="hidden" name="id"
+                                               value="' . $product['id'] . '">
+                                                                    ' .
+                        Html::hiddenInput(
+                            Yii::$app->request->csrfParam,
+                            Yii::$app->request->csrfToken
+                        )
+                        . '
+                                        <button type="submit" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            В корзину
+                                        </button>
+                                    </form>
                             </div>
                         </div>
                     </div>
                     <!--== End prPduct Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 mb-4 mb-sm-10">
-                    <!--== Start Product Item ==-->
-                    <div class="product-item product-st2-item">
-                        <div class="product-thumb">
-                            <a class="d-block" href="product-details.html">
-                                <img src="/web/images/shop/7.webp" width="370" height="450" alt="Image-HasTech">
-                            </a>
-                            <span class="flag-new">new</span>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-rating">
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
                                 </div>
-                                <div class="reviews">150 reviews</div>
-                            </div>
-                            <h4 class="title"><a href="product-details.html">Voyage face cleaner</a></h4>
-                            <div class="prices">
-                                <span class="price">$210.00</span>
-                                <span class="price-old">300.00</span>
-                            </div>
-                            <div class="product-action">
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                            </div>
-                            <div class="product-action-bottom">
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--== End prPduct Item ==-->
-                </div>
-                <div class="col-6 col-lg-4 mb-4 mb-sm-10">
-                    <!--== Start Product Item ==-->
-                    <div class="product-item product-st2-item">
-                        <div class="product-thumb">
-                            <a class="d-block" href="product-details.html">
-                                <img src="/web/images/shop/5.webp" width="370" height="450" alt="Image-HasTech">
-                            </a>
-                            <span class="flag-new">new</span>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-rating">
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                                <div class="reviews">150 reviews</div>
-                            </div>
-                            <h4 class="title"><a href="product-details.html">Impulse Duffle</a></h4>
-                            <div class="prices">
-                                <span class="price">$210.00</span>
-                                <span class="price-old">300.00</span>
-                            </div>
-                            <div class="product-action">
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                            </div>
-                            <div class="product-action-bottom">
-                                <button type="button" class="product-action-btn action-btn-quick-view" data-bs-toggle="modal" data-bs-target="#action-QuickViewModal">
-                                    <i class="fa fa-expand"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
-                                    <i class="fa fa-heart-o"></i>
-                                </button>
-                                <button type="button" class="product-action-btn action-btn-cart" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">
-                                    <span>Add to cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--== End prPduct Item ==-->
-                </div>
-            </div>
+
+
+                    ';
+                }
+                ?>
+
+
+        </div>
         </div>
     </section>
     <!--== End Product Area Wrapper ==-->
@@ -634,7 +336,7 @@ $this->title = Yii::$app->name;
     </div>
     <!--== End Brand Logo Area Wrapper ==-->
 
-    <!--== Start Blog Area Wrapper ==-->
+    <!--== Start Blog Area Wrapper--==
     <section class="section-space pt-0">
         <div class="container">
             <div class="row">
@@ -647,7 +349,7 @@ $this->title = Yii::$app->name;
             </div>
             <div class="row mb-n9">
                 <div class="col-sm-6 col-lg-4 mb-8">
-                    <!--== Start Blog Item ==-->
+                    <!--== Start Blog Item ==--
                     <div class="post-item">
                         <a href="blog-details.html" class="thumb">
                             <img src="/web/images/blog/1.webp" width="370" height="320" alt="Image-HasTech">
@@ -661,10 +363,10 @@ $this->title = Yii::$app->name;
                             </ul>
                         </div>
                     </div>
-                    <!--== End Blog Item ==-->
+                    <!--== End Blog Item ==--
                 </div>
                 <div class="col-sm-6 col-lg-4 mb-8">
-                    <!--== Start Blog Item ==-->
+                    <!--== Start Blog Item ==--
                     <div class="post-item">
                         <a href="blog-details.html" class="thumb">
                             <img src="/web/images/blog/2.webp" width="370" height="320" alt="Image-HasTech">
@@ -678,10 +380,10 @@ $this->title = Yii::$app->name;
                             </ul>
                         </div>
                     </div>
-                    <!--== End Blog Item ==-->
+                    <!--== End Blog Item ==--
                 </div>
                 <div class="col-sm-6 col-lg-4 mb-8">
-                    <!--== Start Blog Item ==-->
+                    <!--== Start Blog Item ==--
                     <div class="post-item">
                         <a href="blog-details.html" class="thumb">
                             <img src="/web/images/blog/3.webp" width="370" height="320" alt="Image-HasTech">
@@ -695,7 +397,7 @@ $this->title = Yii::$app->name;
                             </ul>
                         </div>
                     </div>
-                    <!--== End Blog Item ==-->
+                    <!--== End Blog Item ==--
                 </div>
             </div>
         </div>
@@ -708,13 +410,13 @@ $this->title = Yii::$app->name;
             <div class="newsletter-content-wrap" data-bg-img="/web/images/photos/bg1.webp">
                 <div class="newsletter-content">
                     <div class="section-title mb-0">
-                        <h2 class="title">Join with us</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.</p>
+                        <h2 class="title">Подписывайся!</h2>
+                        <p>Отправьте свой электронный адрес и получайте новости о наших товарах и скидках.</p>
                     </div>
                 </div>
                 <div class="newsletter-form">
                     <form>
-                        <input type="email" class="form-control" placeholder="enter your email">
+                        <input type="email" class="form-control" placeholder="напишите свой email">
                         <button class="btn-submit" type="submit"><i class="fa fa-paper-plane"></i></button>
                     </form>
                 </div>
